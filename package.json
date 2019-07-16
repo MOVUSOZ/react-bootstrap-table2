@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "Rebuilt for react-bootstrap-table",
-  "main": "index.js",
+  "main": "packages/react-bootstrap-table2/index.js",
   "scripts": {
     "build": "./node_modules/.bin/gulp prod",
     "lint": "eslint ./packages --ext .js --ext .jsx --ignore-path .gitignore",
