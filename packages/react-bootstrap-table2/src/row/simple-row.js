@@ -29,19 +29,20 @@ class SimpleRow extends shouldUpdater(eventDelegater(Component)) {
       attrs,
       visibleColumnSize,
       tabIndexCell,
+      RowComponent = 'tr',
       ...rest
     } = this.props;
     const trAttrs = this.delegate(attrs);
     const tabIndexStart = (this.props.rowIndex * visibleColumnSize) + 1;
 
     return (
-      <tr style={ style } className={ className } { ...trAttrs }>
+      <RowComponent style={ style } className={ className } { ...trAttrs } index={ typeof RowComponent !== 'string' ? this.props.rowIndex : undefined }>
         <RowPureContent
           shouldUpdate={ this.shouldUpdateRowContent }
           tabIndexStart={ tabIndexCell ? tabIndexStart : -1 }
           { ...rest }
         />
-      </tr>
+      </RowComponent>
     );
   }
 }

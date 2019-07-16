@@ -56,6 +56,7 @@ class BootstrapTable extends PropsBaseResolver(Component) {
       hover,
       bordered,
       condensed,
+      RowComponent,
       noDataIndication,
       caption,
       rowStyle,
@@ -96,6 +97,7 @@ class BootstrapTable extends PropsBaseResolver(Component) {
             expandRow={ expandRow }
           />
           <Body
+            RowComponent={ RowComponent }
             data={ this.getData() }
             keyField={ keyField }
             tabIndexCell={ tabIndexCell }
@@ -133,6 +135,7 @@ BootstrapTable.propTypes = {
   remote: PropTypes.oneOfType([PropTypes.bool, PropTypes.shape({
     pagination: PropTypes.bool
   })]),
+  RowComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   noDataIndication: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   striped: PropTypes.bool,
   bordered: PropTypes.bool,

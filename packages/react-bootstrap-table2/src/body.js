@@ -48,6 +48,7 @@ class Body extends React.Component {
 
   render() {
     const {
+      RowComponent,
       columns,
       data,
       tabIndexCell,
@@ -90,6 +91,7 @@ class Body extends React.Component {
         const key = _.get(row, keyField);
         const baseRowProps = {
           key,
+          RowComponent,
           row,
           tabIndexCell,
           columns,
