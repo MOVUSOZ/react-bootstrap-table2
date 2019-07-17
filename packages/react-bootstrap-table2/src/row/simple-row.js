@@ -16,6 +16,7 @@ class SimpleRow extends shouldUpdater(eventDelegater(Component)) {
   shouldComponentUpdate(nextProps) {
     this.shouldUpdateRowContent = false;
     this.shouldUpdateRowContent =
+      this.props.RowComponent !== nextProps.RowComponent ||
       this.shouldUpdateChild(nextProps) || this.shouldUpdateByColumnsForSimpleCheck(nextProps);
     if (this.shouldUpdateRowContent) return true;
 
