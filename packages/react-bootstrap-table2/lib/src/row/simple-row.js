@@ -56,7 +56,7 @@ var SimpleRow = function (_shouldUpdater) {
     key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate(nextProps) {
       this.shouldUpdateRowContent = false;
-      this.shouldUpdateRowContent = this.shouldUpdateChild(nextProps) || this.shouldUpdateByColumnsForSimpleCheck(nextProps);
+      this.shouldUpdateRowContent = this.props.RowComponent !== nextProps.RowComponent || this.shouldUpdateChild(nextProps) || this.shouldUpdateByColumnsForSimpleCheck(nextProps);
       if (this.shouldUpdateRowContent) return true;
 
       return this.shouldUpdatedBySelfProps(nextProps);
